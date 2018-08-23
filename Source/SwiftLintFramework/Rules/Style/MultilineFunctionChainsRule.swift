@@ -62,6 +62,11 @@ public struct MultilineFunctionChainsRule: ASTRule, OptInRule, ConfigurationProv
             """
             self.happeningNewsletterOn = self.updateCurrentUser
                 .map { $0.newsletters.happening }.skipNil().skipRepeats()
+            """,
+            """
+            a.b {
+                // ““
+            }.e()
             """
         ],
         triggeringExamples: [
